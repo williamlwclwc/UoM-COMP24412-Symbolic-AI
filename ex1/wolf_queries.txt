@@ -1,0 +1,7 @@
+puzzlestate_move(wfgc(north, north, north, north), Moves).
+isa_list(Moves), puzzlestate_move(wfgc(north, north, north, north), Moves).
+isa_list(Moves), puzzlestate_move(wfgc(south, south, south, south), Moves).
+puzzlestate_move_without(wfgc(north, north, north, north), Moves, []).
+% remove duplicate results
+setof(t, puzzlestate_move_without(wfgc(north, north, north, north), Moves, []), _).
+puzzlestate_move_without(State, Moves, []), false.

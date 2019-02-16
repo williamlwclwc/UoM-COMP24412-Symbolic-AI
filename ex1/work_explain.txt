@@ -1,0 +1,15 @@
+1. Why we get non-termination?
+Because prolog will do the same thing again when we reach a state that we encountered before.
+2. What happened when we add isa_list(Moves)?
+The problem is, we are not enumerating Moves fairly, 
+for example, if we query: isa_list(Moves), puzzlestate_move(wfgc(south, south, south, south), Moves).
+we can find that we will get all result lists length=2 before get any length>2 result lists, however, 
+if we query: puzzlestate_move(wfgc(south, south, south, south), Moves). 
+we will get lists length=2,4,6,... and consist of only "goat".
+So when we add isa_list(Moves), the enumerating strategy for Moves changes, and we will no longer get stuck
+with only one variable(which makes no progress), and will have results, but we still cannot fix
+the infinite loops bug.
+3. Why always terminated?
+Because we add a accumulator that ensures we will not reach a state that we encounetered before,
+and if there are no duplicate states, there will be finite states in total,
+therefore, prolog can always try all possibilities and reach termination.

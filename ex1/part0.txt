@@ -1,0 +1,19 @@
+1+1=2.
+X+Y=2.
+X+Y=Z.
+f(a)=f(a,b).
+f(X,Y)=f(Y,a).
+f(X,a)=f(b,X).
+f(X,Y,Z)=f(Y,Z,X).
+f(X,X,Y)=f(Y,a,b).
+f(X,X,Y)=f(Y,a,a).
+
+subsumes_term(1+1, 2).
+subsumes_term(X+Y, 2).
+subsumes_term(X+Y, Z).
+subsumes_term(f(a), f(a,b)).
+subsumes_term(f(X,Y), f(Y,a)).
+subsumes_term(f(X,a), f(b,X)).
+subsumes_term(f(X,Y,Z), f(Y,Z,X)).
+subsumes_term(f(X,X,Y), f(Y,a,b)).
+subsumes_term(f(X,X,Y), f(Y,a,a)).
