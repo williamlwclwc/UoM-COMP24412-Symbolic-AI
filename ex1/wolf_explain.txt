@@ -2,9 +2,9 @@
 Because prolog will do the same thing again when we reach a state that we encountered before.
 2. What happened when we add isa_list(Moves)?
 The problem is, we are not enumerating Moves fairly, 
-for example, if we query: isa_list(Moves), puzzlestate_move(wfgc(south, south, south, south), Moves).
+for example, if we query: isa_list(Moves), puzzlestate_moves(fwgc(south, south, south, south), Moves).
 we can find that we will get all result lists length=2 before get any length>2 result lists, however, 
-if we query: puzzlestate_move(wfgc(south, south, south, south), Moves). 
+if we query: puzzlestate_moves(fwgc(south, south, south, south), Moves). 
 we will get lists length=2,4,6,... and consist of only "goat".
 So when we add isa_list(Moves), the enumerating strategy for Moves changes, and we will no longer get stuck
 with only one variable(which makes no progress), and will have results, but we still cannot fix
