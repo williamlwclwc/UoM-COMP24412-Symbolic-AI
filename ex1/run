@@ -1,3 +1,0 @@
-#!/bin/bash
-#swipl -q -f hello.pl -t main
-swipl -q -f auto.pl -t main

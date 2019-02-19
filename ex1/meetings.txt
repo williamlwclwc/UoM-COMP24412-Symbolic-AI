@@ -1,9 +1,9 @@
 1. What is the search space of this problem e.g. the number of all possible solutions without constraints
 6*5*4*3*2*1 = 720
 2. How many solutions to the constraints should there be? Does your program return all possible solutions? If not comment on why not (it is not necessary to but you should understand why).
-Should be 8 solutions, the program return all possible solutions.
+Should be only one solution without duplicates. My program return all solutions.
 3. Does the order in which you check the constraints affect 
 (i) the number of solutions returned
 No.
 (ii) the amount of work required to find all solutions?
-Yes.
+Yes. Because if the first constraints failed, then all other constraints can be skipped.

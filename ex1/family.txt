@@ -1,6 +1,9 @@
 1. What happens when ask for Chronos’ cousins
-The recurrsion of finding ancestor in cousin rule will not reach an end since chronos is the ancestor of himself.
+The recurrsion of finding ancestor in cousin rule will not reach an end since chronos is the ancestor of himself(there is a cycle in the path).
 2.(i)
-There are 11 people in my_family.pl, 
-the fact base is not complete enough, it can show who is my mother, but cannot show who is my mother's mother because I did not put that information in the fact base.
-(ii) I think in the real world, there will be step father/mother, so it may be better just use arity 2 relation parent(X, Y).
+There are 11 people in my_family.pl, the fact base is not complete enough, it can show who is my mother, 
+but cannot show who is my mother's mother because I did not put that information in the fact base.
+However, it can infer the relations(father, sibling, etc.) based on all facts we provided.
+(ii) 
+I think in the real world, there will be step father/mother, 
+so it may be better just use arity 2 relation parent(X, Y) to present parent relation more precisely.

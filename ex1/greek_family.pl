@@ -48,6 +48,7 @@ man(mygdon).
 man(edonus).
 man(biston).
 man(priapus).
+man(ares).
 man(chronos).
 
 woman(gaia).

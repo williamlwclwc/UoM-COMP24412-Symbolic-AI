@@ -1,24 +1,10 @@
-% % fact: students
-% student(student1).
-% student(student2).
-% student(student3).
-% student(student4).
-% student(student5).
-% student(student6).
-
-member_of(X,[X|_]).
-member_of(X,[_|Xs]) :-
-    member_of(X,Xs).
-
-student(X) :-
-    member_of(X, [student1, student2, student3, student4, student5, student6]).
-
-% is a list all students?
-is_student([X]) :-
-    student(X).
-is_student([X|Y]) :-
-    student(X),
-    is_student(Y).
+% fact: students
+student(student1).
+student(student2).
+student(student3).
+student(student4).
+student(student5).
+student(student6).
 
 nonmember_of(_, []).
 nonmember_of(X,[Y|Ys]) :-
@@ -53,7 +39,8 @@ cannot_in(Student, A-B) :-
 
 meetings_one_two_three(A-B,C-D,E-F) :-
     % A-F are students
-    is_student([A, B, C, D, E, F]),
+    student(A), student(B), student(C), 
+    student(D), student(E), student(F),
     % A-F are different
     alldifferent([A, B, C, D, E, F]),
     % constraint 1
