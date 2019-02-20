@@ -63,13 +63,14 @@ puzzlestate_moves(wfgc(Farmer, Wolf, Goat, Cabbage), [M|Ms]) :-
     puzzlestate_moves(wfgc(OldF, OldW, OldG, OldC), Ms).
 
 % modify puzzlestate_move
-puzzlestate_moves_without(wfgc(south, south, south, south), [], _Visited).
+puzzlestate_moves_without(wfgc(south, south, south, south), [], Visited) :-
+    nonmember_of(wfgc(south,south,south,south), Visited).
 puzzlestate_moves_without(wfgc(Farmer, Wolf, Goat, Cabbage), [M|Ms], Visited) :-
     % Move: old state -> new state
     safestate(wfgc(Farmer, Wolf, Goat, Cabbage)),
     safestate(wfgc(OldF, OldW, OldG, OldC)),
     move(wfgc(OldF, OldW, OldG, OldC), M, wfgc(Farmer, Wolf, Goat, Cabbage)),
-    nonmember_of(wfgc(OldF, OldW, OldG, OldC), Visited),
-    puzzlestate_moves_without(wfgc(OldF, OldW, OldG, OldC), Ms, [wfgc(OldF, OldW, OldG, OldC)|Visited]).
+    nonmember_of(wfgc(Farmer, Wolf, Goat, Cabbage), Visited),
+    puzzlestate_moves_without(wfgc(OldF, OldW, OldG, OldC), Ms, [wfgc(Farmer, Wolf, Goat, Cabbage)|Visited]).
 
 
