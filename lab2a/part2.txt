@@ -1,0 +1,10 @@
+1. If something has an engine and four wheels it is a car
+2. A good meal is one that contains three different kinds of food
+3. Every pet is either a dog or a cat
+4. An object A is part of another object B either directly or due to the fact that A is part of anobject C, which is itself part of B.
+5. Hate is always mutual
+6. For every action, there is an equal and opposite reaction
+7. There are only ever exactly two Sith, a master and an apprentice
+8. Everybody was Kung Fu fighting, those cats were fast as lightning
+9. Nobody expects the Spanish Inquisition
+10. It is a truth universally acknowledged, that a single man in possession of a good fortune, mustbe in want of a wife.

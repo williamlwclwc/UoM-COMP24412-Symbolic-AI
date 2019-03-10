@@ -2,6 +2,6 @@
 
 ## EX1
 
-## EX2
+## Lab2a
 
-## EX3
+## Lab2b
