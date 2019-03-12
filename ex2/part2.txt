@@ -1,0 +1,83 @@
+1. If something has an engine and four wheels it is a car
+
+Prolog:
+car(X) :- hasEngine(X), fourWheels(X).
+
+FOL:
+for all X.((hasEngine(X) and fourWheels(X))->car(X))
+
+2. A good meal is one that contains three different kinds of food
+
+Prolog
+goodMeal(X) :- containThreeKindsOfFood(X).
+
+FOL:
+for all X.(containThreeKindsOfFood(X)->goodMeal(X))
+
+3. Every pet is either a dog or a cat
+
+Prolog: cannot write in prolog, if we transfer this rule into a clause, we will get "pet -> dog or cat",
+"~pet or dog or cat", which is not a horn clause(2 postive literals). According to the semantics in prolog,
+a rule can only be transfered into a horn clause, so this question cannot be written in prolog.
+
+FOL:
+for all X.(pet(X)->(dog(X) or cat(X)))
+
+4. An object A is part of another object B either directly or due to the fact that A is part of anobject C, which is itself part of B.
+
+Prolog:
+partOf(A, B) :- partOf(A, C), partOf(C, B).
+
+FOL:
+for all A, B.(partOf(A, B)->(exists C.(partof(A, C) and partOf(C, B)) or partOf(A, B)))
+
+5. Hate is always mutual
+
+Prolog:
+mutual(X) :- hate(X).
+
+FOL:
+for all X.(hate(X)->mutual(X)).
+
+6. For every action, there is an equal and opposite reaction
+
+Prolog:
+reaction(X, Y) :- action(X), equal(X, Y), opposite(X, Y).
+
+FOL:
+for all X.(action(X)->exists Y.(reaction(X, Y) and equal(X, Y) and opposite(X, Y)))
+
+7. There are only ever exactly two Sith, a master and an apprentice
+
+Prolog:
+sith(master).
+sith(apprentic).
+
+FOL:
+exists X, Y.(sith(X) and master(X) and sith(Y) and master(Y) and not exists Z.(sith(Z)))
+
+8. Everybody was Kung Fu fighting, those cats were fast as lightning
+
+Prolog:
+kungfuFighting(_).
+fastAsLightning(X) :- cats(X).
+
+FOL:
+for all X.(kungfuFighting(X)) and for all Y.(cats(Y)->fastAsLightning(Y))
+
+9. Nobody expects the Spanish Inquisition
+
+Prolog:
+Since prolog is "closed world", so if we just do not write any facts and rules about expect Spanish Inquisition,
+then query expectsSpanishInquisition(X) will always be false.
+
+FOL:
+not exists X.(expectsSpanishInquisition(X))
+
+10. It is a truth universally acknowledged, that a single man in possession of a good fortune, mustbe in want of a wife.
+
+Prolog:
+inWantOfWife(X) :- single(X), goodFortune(X).
+
+FOL:
+for all X.(single(X) and goodFortune(X) -> inWantOfWife(X))

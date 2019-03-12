@@ -10,7 +10,9 @@ crops_eqs(Fields) :-
     B #\= D,
     C #\= D,
     C #\= E,
-    D #\= F.
+    D #\= E,
+    D #\= F,
+    E #\= F.
 
 crops3(Fields) :-
     Fields = [_A, _B, _C, _D, _E, _F],
