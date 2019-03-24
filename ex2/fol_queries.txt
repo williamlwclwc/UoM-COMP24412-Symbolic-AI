@@ -1,0 +1,11 @@
+% queries of model.p
+fof(query1, conjecture, ?[X]:(nbaChampion(X))).
+fof(query2, conjecture, ?[X]:(eastChampion(X))).
+fof(query3, conjecture, ?[X]:(westChampion(X))).
+fof(query4, conjecture, ?[X, Y]:(nbaFinal(X, Y))).
+fof(query5, conjecture, ?[X]:(conferenceWinner(X) & ~finalWinner(X))).
+fof(query6, conjecture, ![X]:(east(X) => team(X))).
+fof(query7, conjecture, ![X]:(finalWinner(X) => semiWinner(X))).
+fof(query8, conjecture, ?[X]:(finalWinner(X) & ~firstRoundWinner(X))).
+fof(query9, conjecture, ![X]:(semiWinner(X) => conferenceWinner(X))).
+fof(query10, conjecture, ?[X]:(semiWinner(X) => conferenceWinner(X))).

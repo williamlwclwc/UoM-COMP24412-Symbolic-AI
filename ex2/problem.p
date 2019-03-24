@@ -1,0 +1,1 @@
+fof(problem, axiom, ![X]: (?[X]: (p(X, Y)) => q(f(X)))).

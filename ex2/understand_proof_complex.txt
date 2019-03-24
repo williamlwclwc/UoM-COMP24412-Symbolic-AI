@@ -1,0 +1,119 @@
+1. Clausify the problem: 7 Skolem functions and 26 clauses
+cnf(u74,axiom,
+    animal(X0) | ~wolf(X0)).
+
+cnf(u75,axiom,
+    wolf(sK0)).
+
+cnf(u76,axiom,
+    animal(X0) | ~fox(X0)).
+
+cnf(u77,axiom,
+    fox(sK1)).
+
+cnf(u78,axiom,
+    animal(X0) | ~bird(X0)).
+
+cnf(u79,axiom,
+    bird(sK2)).
+
+cnf(u80,axiom,
+    animal(X0) | ~caterpillar(X0)).
+
+cnf(u81,axiom,
+    caterpillar(sK3)).
+
+cnf(u82,axiom,
+    animal(X0) | ~snail(X0)).
+
+cnf(u83,axiom,
+    snail(sK4)).
+
+cnf(u84,axiom,
+    grain(sK5)).
+
+cnf(u85,axiom,
+    plant(X0) | ~grain(X0)).
+
+cnf(u86,axiom,
+    eats(X0,X1) | ~eats(X1,X2) | ~plant(X2) | ~much_smaller(X1,X0) | ~animal(X1) | eats(X0,X3) | ~plant(X3) | ~animal(X0)).
+
+cnf(u88,axiom,
+    much_smaller(X0,X1) | ~caterpillar(X0) | ~bird(X1)).
+
+cnf(u87,axiom,
+    much_smaller(X0,X1) | ~snail(X0) | ~bird(X1)).
+
+cnf(u89,axiom,
+    much_smaller(X0,X1) | ~fox(X1) | ~bird(X0)).
+
+cnf(u90,axiom,
+    much_smaller(X0,X1) | ~wolf(X1) | ~fox(X0)).
+
+cnf(u92,axiom,
+    ~eats(X0,X1) | ~grain(X1) | ~wolf(X0)).
+
+cnf(u91,axiom,
+    ~eats(X0,X1) | ~fox(X1) | ~wolf(X0)).
+
+cnf(u93,axiom,
+    eats(X0,X1) | ~caterpillar(X1) | ~bird(X0)).
+
+cnf(u94,axiom,
+    ~eats(X0,X1) | ~snail(X1) | ~bird(X0)).
+
+cnf(u98,axiom,
+    eats(X0,sK6(X0)) | ~snail(X0)).
+
+cnf(u97,axiom,
+    eats(X0,sK6(X0)) | ~caterpillar(X0)).
+
+cnf(u96,axiom,
+    plant(sK6(X0)) | ~snail(X0)).
+
+cnf(u95,axiom,
+    plant(sK6(X0)) | ~caterpillar(X0)).
+
+cnf(u99,negated_conjecture,
+    ~eats(X0,X1) | ~eats(X1,X2) | ~grain(X2) | ~animal(X1) | ~animal(X0)).
+
+2. Solve the problem using unordered resolution
+It will reach time limit and cannot resolve the problem.
+
+3. Run with "--statistics full" using default options
+% >>> Input
+% Input formulas: 21
+% Introduced skolems: 7
+% 
+% >>> Saturation
+% Initial clauses: 26
+% Generated clauses: 188
+% Active clauses: 152
+% Passive clauses: 182
+% Final active clauses: 152
+% Final passive clauses: 3
+% 
+% >>> Simplifying Inferences
+% Duplicate literals: 3
+% 
+% >>> Deletion Inferences
+% Forward subsumptions: 30
+% 
+% >>> Generating Inferences
+% Binary resolution: 160
+% 
+% Memory used [KB]: 383
+% Time elapsed: 0.028 s
+% ------------------------------
+% ------------------------------
+(a) How many clauses were generated? 188.
+(b) How many clauses were activated? 152.
+(c) How many times was the resolution rule applied? 160.
+(d) How many steps? 261.
+
+4. Play with age_weight_ratio
+default: generated clauses: 188
+age_weight_ratio 10:1: generated clauses: 232
+age_weight_ratio 1:10: generated clauses: 186
+age_weight_ratio 1:1: generated clauses: 188
+With selecting more clauses by age, vampire will generated more clauses. 

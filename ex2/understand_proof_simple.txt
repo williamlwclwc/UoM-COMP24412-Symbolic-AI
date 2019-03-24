@@ -1,0 +1,216 @@
+1. Translate to TPTP
+greed.p:
+fof(one, axiom, ![X]: (happy(X) <=> ?[Y]: (loves(X, Y)))).
+fof(two, axiom, ![X]: (rich(X) => loves(X, money))).
+fof(three, axiom, rich(giles)).
+fof(four, conjecture, happy(giles)).
+dependency.p:
+fof(one, axiom, ![X]: (require(X) => require(depend(X)))).
+fof(two, axiom, depend(a) = b).
+fof(three, axiom, depend(b) = c).
+fof(four, axiom, require(a)).
+fof(five, conjecture, require(c)).
+
+2. Clausify the problems
+greed.p:
+cnf(u13,axiom,
+    happy(X0) | ~loves(X0,X1)).
+
+cnf(u12,axiom,
+    loves(X0,sK0(X0)) | ~happy(X0)).
+
+cnf(u14,axiom,
+    loves(X0,money) | ~rich(X0)).
+
+cnf(u15,axiom,
+    rich(giles)).
+
+cnf(u16,negated_conjecture,
+    ~happy(giles)).
+
+dependency.p:
+cnf(u9,axiom,
+    require(depend(X0)) | ~require(X0)).
+
+cnf(u10,axiom,
+    depend(a) = b).
+
+cnf(u11,axiom,
+    depend(b) = c).
+
+cnf(u12,axiom,
+    require(a)).
+
+cnf(u13,negated_conjecture,
+    ~require(c)).
+
+3. Solve the problems
+greed.p:
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for greed
+% SZS output start Proof for greed
+1. ! [X0] : (happy(X0) <=> ? [X1] : loves(X0,X1)) [input]
+2. ! [X0] : (rich(X0) => loves(X0,money)) [input]
+3. rich(giles) [input]
+4. happy(giles) [input]
+5. ~happy(giles) [negated conjecture 4]
+6. ~happy(giles) [flattening 5]
+7. ! [X0] : (loves(X0,money) | ~rich(X0)) [ennf transformation 2]
+8. ! [X0] : ((happy(X0) | ! [X1] : ~loves(X0,X1)) & (? [X1] : loves(X0,X1) | ~happy(X0))) [nnf transformation 1]
+9. ! [X0] : ((happy(X0) | ! [X1] : ~loves(X0,X1)) & (? [X2] : loves(X0,X2) | ~happy(X0))) [rectify 8]
+10. ! [X0] : (? [X2] : loves(X0,X2) => loves(X0,sK0(X0))) [choice axiom]
+11. ! [X0] : ((happy(X0) | ! [X1] : ~loves(X0,X1)) & (loves(X0,sK0(X0)) | ~happy(X0))) [skolemisation 9,10]
+13. ~loves(X0,X1) | happy(X0) [cnf transformation 11]
+14. ~rich(X0) | loves(X0,money) [cnf transformation 7]
+15. rich(giles) [cnf transformation 3]
+16. ~happy(giles) [cnf transformation 6]
+17. loves(giles,money) [resolution 14,15]
+18. happy(giles) [resolution 17,13]
+19. $false [resolution 18,16]
+% SZS output end Proof for greed
+% ------------------------------
+% Version: Vampire 4.2.2 (commit e1949dd on 2017-12-14 18:39:21 +0000)
+% Termination reason: Refutation
+
+% Memory used [KB]: 255
+% Time elapsed: 0.047 s
+% ------------------------------
+% ------------------------------
+dependency.p:
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for dependency
+% SZS output start Proof for dependency
+1. ! [X0] : (require(X0) => require(depend(X0))) [input]
+2. depend(a) = b [input]
+3. depend(b) = c [input]
+4. require(a) [input]
+5. require(c) [input]
+6. ~require(c) [negated conjecture 5]
+7. ~require(c) [flattening 6]
+8. ! [X0] : (require(depend(X0)) | ~require(X0)) [ennf transformation 1]
+9. ~require(X0) | require(depend(X0)) [cnf transformation 8]
+10. depend(a) = b [cnf transformation 2]
+11. depend(b) = c [cnf transformation 3]
+12. require(a) [cnf transformation 4]
+13. ~require(c) [cnf transformation 7]
+14. require(depend(a)) [resolution 9,12]
+15. require(b) [forward demodulation 14,10]
+16. require(depend(b)) [resolution 15,9]
+17. require(c) [forward demodulation 16,11]
+18. $false [resolution 17,13]
+% SZS output end Proof for dependency
+% ------------------------------
+% Version: Vampire 4.2.2 (commit e1949dd on 2017-12-14 18:39:21 +0000)
+% Termination reason: Refutation
+
+% Memory used [KB]: 255
+% Time elapsed: 0.022 s
+% ------------------------------
+% ------------------------------
+
+4. For the first proof select a resolution step and identify the selected literals and the unifier required
+14. ~rich(X0) | loves(X0,money) [cnf transformation 7]
+15. rich(giles) [cnf transformation 3]
+17. loves(giles,money) [resolution 14,15]
+selected literal: rich(X0), unifier: mgu(X0, giles)
+
+5. For the second proof select a paramodulation step and identify the 
+term being rewritten and the unifier required to perform the step
+9. ~require(X0) | require(depend(X0)) [cnf transformation 8]
+10. depend(a) = b [cnf transformation 2]
+12. require(a) [cnf transformation 4]
+14. require(depend(a)) [resolution 9,12]
+15. require(b) [forward demodulation 14,10]
+term being rewritten: depend(a)
+unifier required: mgu(X0, a)
+
+6. Solve the first problem using unordered resolution
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for greed
+% SZS output start Proof for greed
+1. ! [X0] : (happy(X0) <=> ? [X1] : loves(X0,X1)) [input]
+2. ! [X0] : (rich(X0) => loves(X0,money)) [input]
+3. rich(giles) [input]
+4. happy(giles) [input]
+5. ~happy(giles) [negated conjecture 4]
+6. ~happy(giles) [flattening 5]
+7. ! [X0] : (loves(X0,money) | ~rich(X0)) [ennf transformation 2]
+8. ! [X0] : ((happy(X0) | ! [X1] : ~loves(X0,X1)) & (? [X1] : loves(X0,X1) | ~happy(X0))) [nnf transformation 1]
+9. ! [X0] : ((happy(X0) | ! [X1] : ~loves(X0,X1)) & (? [X2] : loves(X0,X2) | ~happy(X0))) [rectify 8]
+10. ! [X0] : (? [X2] : loves(X0,X2) => loves(X0,sK0(X0))) [choice axiom]
+11. ! [X0] : ((happy(X0) | ! [X1] : ~loves(X0,X1)) & (loves(X0,sK0(X0)) | ~happy(X0))) [skolemisation 9,10]
+13. happy(X0) | ~loves(X0,X1) [cnf transformation 11]
+14. loves(X0,money) | ~rich(X0) [cnf transformation 7]
+15. rich(giles) [cnf transformation 3]
+16. ~happy(giles) [cnf transformation 6]
+17. ~loves(giles,X0) [resolution 13,16]
+20. ~rich(giles) [resolution 17,14]
+24. $false [resolution 20,15]
+% SZS output end Proof for greed
+% ------------------------------
+% Version: Vampire 4.2.2 (commit e1949dd on 2017-12-14 18:39:21 +0000)
+% Termination reason: Refutation
+
+% Memory used [KB]: 255
+% Time elapsed: 0.024 s
+% ------------------------------
+% ------------------------------
+
+Explanation: It got different proof because "--selection 0" uses unordered resolution, so 
+the order of selecting literals can be different and the proof precedure then can be different.
+For example, at step 17, for default option, we do resolution 14, 15 and get loves(giles, money), 
+however, for "--selection 0", we do resolution 13, 16 and get ~loves(giles, X0), although the proof 
+order is different, we will get the same result("false") in the end.
+
+7. Solve the second problem using --selection 0 --age_weight_ratio 10:1
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for dependency
+% SZS output start Proof for dependency
+1. ! [X0] : (require(X0) => require(depend(X0))) [input]
+2. depend(a) = b [input]
+3. depend(b) = c [input]
+4. require(a) [input]
+5. require(c) [input]
+6. ~require(c) [negated conjecture 5]
+7. ~require(c) [flattening 6]
+8. ! [X0] : (require(depend(X0)) | ~require(X0)) [ennf transformation 1]
+9. require(depend(X0)) | ~require(X0) [cnf transformation 8]
+10. depend(a) = b [cnf transformation 2]
+11. depend(b) = c [cnf transformation 3]
+12. require(a) [cnf transformation 4]
+13. ~require(c) [cnf transformation 7]
+15. require(depend(a)) [resolution 9,12]
+18. require(c) | ~require(b) [superposition 9,11]
+19. require(b) [forward demodulation 15,10]
+22. ~require(b) [resolution 18,13]
+38. $false [resolution 22,19]
+% SZS output end Proof for dependency
+% ------------------------------
+% Version: Vampire 4.2.2 (commit e1949dd on 2017-12-14 18:39:21 +0000)
+% Termination reason: Refutation
+
+% Memory used [KB]: 255
+% Time elapsed: 0.030 s
+% ------------------------------
+% ------------------------------
+
+Answers:
+The 1-14 lines of proof is the same, and using default settings, we have:
+14. require(depend(a)) [resolution 9,12]
+15. require(b) [forward demodulation 14,10]
+16. require(depend(b)) [resolution 15,9]
+17. require(c) [forward demodulation 16,11]
+18. $false [resolution 17,13]
+but using --selection 0 --age_weight_ratio 10:1, we have:
+15. require(depend(a)) [resolution 9,12]
+18. require(c) | ~require(b) [superposition 9,11]
+19. require(b) [forward demodulation 15,10]
+22. ~require(b) [resolution 18,13]
+38. $false [resolution 22,19]
+The latter has more generated clauses, more active and more passive clauses, 
+also, the choices on doing resolution and demodulation have changed.
+Paramodulation step: superposition 9,11: 9. ~require(X0) | require(depend(X0)) 11. depend(b) = c
+term being rewritten: depend(X0)
+unifier required: mgu(X0, b)
+
+

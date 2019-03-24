@@ -1,0 +1,7 @@
+In sql, we often use "select" statement to query some data from tables according to some constraints.
+
+If we assume tables to be facts, and constraints to be the rules we defined, and "select" procedure to be 
+":-" implication, then the procedure in prolog will be similar to sql.
+
+Sometimes we define our rules using other rules, this could be similar to sql query that using nesting 
+"select" statements.

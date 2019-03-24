@@ -1,0 +1,101 @@
+1. Translate into TPTP
+fof(one, axiom, ![X]: (happy(X) <=> ?[Y]: (loves(X, Y)))).
+fof(two, axiom, ![X]: (rich(X) => loves(X, money))).
+fof(three, axiom, happy(giles)).
+fof(four, conjecture, rich(giles)).
+
+2. Solve the problem using default options
+Satisfiable!
+% SZS status CounterSatisfiable for greed2
+% # SZS output start Saturation.
+cnf(u14,axiom,
+    ~rich(X0) | loves(X0,money)).
+
+cnf(u16,negated_conjecture,
+    ~rich(giles)).
+
+cnf(u17,axiom,
+    loves(giles,sK0(giles))).
+
+cnf(u13,axiom,
+    ~loves(X0,X1) | happy(X0)).
+
+cnf(u15,axiom,
+    happy(giles)).
+
+cnf(u12,axiom,
+    ~happy(X0) | loves(X0,sK0(X0))).
+
+% # SZS output end Saturation.
+% ------------------------------
+% Version: Vampire 4.2.2 (commit e1949dd on 2017-12-14 18:39:21 +0000)
+% Termination reason: Satisfiable
+
+% Memory used [KB]: 255
+% Time elapsed: 0.048 s
+% ------------------------------
+% ------------------------------
+
+Explanation:
+
+3. Solve the problem using unordered resolution
+Satisfiable!
+% SZS status CounterSatisfiable for greed2
+% # SZS output start Saturation.
+cnf(u14,axiom,
+    loves(X0,money) | ~rich(X0)).
+
+cnf(u17,axiom,
+    ~rich(X0) | happy(X0)).
+
+cnf(u20,axiom,
+    loves(X0,sK0(X0)) | ~rich(X0)).
+
+cnf(u16,negated_conjecture,
+    ~rich(giles)).
+
+cnf(u19,axiom,
+    loves(giles,sK0(giles))).
+
+cnf(u12,axiom,
+    loves(X0,sK0(X0)) | ~happy(X0)).
+
+cnf(u21,axiom,
+    loves(X1,sK0(X1)) | ~loves(X1,X2)).
+
+cnf(u20,axiom,
+    loves(X0,sK0(X0)) | ~rich(X0)).
+
+cnf(u14,axiom,
+    loves(X0,money) | ~rich(X0)).
+
+cnf(u13,axiom,
+    happy(X0) | ~loves(X0,X1)).
+
+cnf(u21,axiom,
+    loves(X1,sK0(X1)) | ~loves(X1,X2)).
+
+cnf(u13,axiom,
+    happy(X0) | ~loves(X0,X1)).
+
+cnf(u17,axiom,
+    ~rich(X0) | happy(X0)).
+
+cnf(u15,axiom,
+    happy(giles)).
+
+cnf(u12,axiom,
+    loves(X0,sK0(X0)) | ~happy(X0)).
+
+% # SZS output end Saturation.
+% ------------------------------
+% Version: Vampire 4.2.2 (commit e1949dd on 2017-12-14 18:39:21 +0000)
+% Termination reason: Satisfiable
+
+% Memory used [KB]: 255
+% Time elapsed: 0.047 s
+% ------------------------------
+% ------------------------------
+
+Explanation: There are more clauses generated if we use "--selection 0", because 
+if we use unordered resolution, 
