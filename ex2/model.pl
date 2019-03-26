@@ -123,6 +123,8 @@ finalWinner(X) :-
     conferenceWinner(X), conferenceWinner(Y),
     defeat(X, Y).
 
+finalWinner(X) :- nbaChampion(X).
+
 homeAdvantage(X, Y) :-
     posHigher(X, Y).
 

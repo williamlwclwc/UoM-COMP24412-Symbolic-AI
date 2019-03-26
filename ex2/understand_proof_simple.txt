@@ -12,6 +12,7 @@ fof(four, axiom, require(a)).
 fof(five, conjecture, require(c)).
 
 2. Clausify the problems
+Handwriting is the same as Vampire generated. 
 greed.p:
 cnf(u13,axiom,
     happy(X0) | ~loves(X0,X1)).
@@ -112,7 +113,8 @@ dependency.p:
 14. ~rich(X0) | loves(X0,money) [cnf transformation 7]
 15. rich(giles) [cnf transformation 3]
 17. loves(giles,money) [resolution 14,15]
-selected literal: rich(X0), unifier: mgu(X0, giles)
+selected literal: ~rich(X0), rich(giles)
+unifier: mgu(~rich(X0), rich(giles))
 
 5. For the second proof select a paramodulation step and identify the 
 term being rewritten and the unifier required to perform the step
@@ -121,8 +123,8 @@ term being rewritten and the unifier required to perform the step
 12. require(a) [cnf transformation 4]
 14. require(depend(a)) [resolution 9,12]
 15. require(b) [forward demodulation 14,10]
-term being rewritten: depend(a)
-unifier required: mgu(X0, a)
+term being rewritten: require(depend(a))
+unifier required: empty for demodulation step
 
 6. Solve the first problem using unordered resolution
 % Refutation found. Thanks to Tanya!
@@ -209,8 +211,9 @@ but using --selection 0 --age_weight_ratio 10:1, we have:
 38. $false [resolution 22,19]
 The latter has more generated clauses, more active and more passive clauses, 
 also, the choices on doing resolution and demodulation have changed.
+
 Paramodulation step: superposition 9,11: 9. ~require(X0) | require(depend(X0)) 11. depend(b) = c
-term being rewritten: depend(X0)
-unifier required: mgu(X0, b)
+term being rewritten:  ~require(X0) | require(depend(X0))
+unifier required: {X0 -> b}
 
 

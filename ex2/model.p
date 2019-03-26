@@ -99,23 +99,36 @@ fof(79, axiom, defRankHigher(cavaliers, pelicans)).
 fof(80, axiom, ![X, Y]:((defRankHigher(X, Y) | ?[Z]:(defRankHigher(Z, Y) & defBetter(X, Z))) => defBetter(X, Y))). 
 
 % intensional relations(rules)
-fof(81, axiom, ![X]:(?[Y]:(team(X) & team(Y) & defeat(X, Y)) => firstRoundWinner(X))).
+fof(81, axiom, ![X]:(?[Y]:(team(X) & team(Y) & defeat(X, Y)) <=> firstRoundWinner(X))).
 
-fof(82, axiom, ![X]:(?[Y]:(firstRoundWinner(X) & firstRoundWinner(Y) & defeat(X, Y)) => semiWinner(X))).
+fof(82, axiom, ![X]:(?[Y]:(firstRoundWinner(X) & firstRoundWinner(Y) & defeat(X, Y)) <=> semiWinner(X))).
 
-fof(83, axiom, ![X]:(?[Y]:(semiWinner(X) & semiWinner(Y) & defeat(X, Y)) => conferenceWinner(X))).
+fof(83, axiom, ![X]:(?[Y]:(semiWinner(X) & semiWinner(Y) & defeat(X, Y)) <=> conferenceWinner(X))).
 
-fof(84, axiom, ![X]:(?[Y]:(conferenceWinner(X) & conferenceWinner(Y) & defeat(X, Y)) => finalWinner(X))).
+fof(84, axiom, ![X]:(?[Y]:(conferenceWinner(X) & conferenceWinner(Y) & defeat(X, Y)) <=> finalWinner(X))).
 
-fof(85, axiom, ![X, Y]:(posHigher(X, Y) => homeAdvantage(X, Y))).
+fof(85, axiom, ![X, Y]:(posHigher(X, Y) <=> homeAdvantage(X, Y))).
 
-fof(86, axiom, ![X, Y]:(((east(X) & east(Y)) | (west(X) & west(Y))) & X!=Y & semiWinner(X) & semiWinner (Y) => conferenceFinal(X, Y))).
+fof(86, axiom, ![X, Y]:(((east(X) & east(Y)) | (west(X) & west(Y))) & X!=Y & semiWinner(X) & semiWinner (Y) <=> conferenceFinal(X, Y))).
 
-fof(87, axiom, ![X, Y]:(X!=Y & conferenceWinner(X) & conferenceWinner(Y) => nbaFinal(X, Y))).
+fof(87, axiom, ![X, Y]:(X!=Y & conferenceWinner(X) & conferenceWinner(Y) <=> nbaFinal(X, Y))).
 
-fof(88, axiom, ![X]:(west(X) & conferenceWinner(X) => westChampion(X))).
+fof(88, axiom, ![X]:(west(X) & conferenceWinner(X) <=> westChampion(X))).
 
-fof(89, axiom, ![X]:(east(X) & conferenceWinner(X) => eastChampion(X))).
+fof(89, axiom, ![X]:(east(X) & conferenceWinner(X) <=> eastChampion(X))).
 
-fof(90, axiom, ![X]:(finalWinner(X) => nbaChampion(X))).
+fof(90, axiom, ![X]:(finalWinner(X) <=> nbaChampion(X))).
 
+% queries
+% fof(query1, conjecture, ?[X]:(nbaChampion(X))).
+% fof(query2, conjecture, ?[X]:(eastChampion(X))).
+% fof(query3, conjecture, ?[X, Y]:(defeat(X, Y) & offBetter(Y, X) & defBetter(Y, X))).
+% fof(query4, conjecture, ?[X, Y]:(nbaFinal(X, Y))).
+% fof(query5, conjecture, ?[X]:(conferenceWinner(X) & ~finalWinner(X))).
+% fof(query2a1, conjecture, ![X]:(team(X) => east(X) | west(X))).
+% fof(query2a2, conjecture, ?[X, Y]:(nbaChampion(X) <=> finalWinner(X))).
+% fof(query2a3, conjecture, ![X]:(east(X) => team(X))).
+% fof(query2a4, conjecture, ![X]:(finalWinner(X) => team(X))).
+% fof(query2a5, conjecture, ?[X]:(finalWinner(X) & ~firstRoundWinner(X))).
+% fof(query2a6, conjecture, ![X]:(semiWinner(X) => conferenceWinner(X))).
+% fof(query2a7, conjecture, ?[X]:(semiWinner(X) => conferenceWinner(X))).

@@ -4,15 +4,18 @@ Prolog:
 car(X) :- hasEngine(X), fourWheels(X).
 
 FOL:
-for all X.((hasEngine(X) and fourWheels(X))->car(X))
+for all X.(hasEngine(X) and fourWheels(X)->car(X))
 
 2. A good meal is one that contains three different kinds of food
 
 Prolog
-goodMeal(X) :- containThreeKindsOfFood(X).
+goodMeal(X) :- 
+    contain(X, A), contain(X, B), contain(X, C),
+    food(A), food(B), food(C),
+    dif(A, B), dif(A, C), dif(B, C).
 
 FOL:
-for all X.(containThreeKindsOfFood(X)->goodMeal(X))
+for all X.(food(a) and food(b) and food(c) and a!=b and b!=c and c!=a and contain(X,a) and contain(X, b) and contain(X, c) -> goodMeal(X))
 
 3. Every pet is either a dog or a cat
 
@@ -21,28 +24,29 @@ Prolog: cannot write in prolog, if we transfer this rule into a clause, we will 
 a rule can only be transfered into a horn clause, so this question cannot be written in prolog.
 
 FOL:
-for all X.(pet(X)->(dog(X) or cat(X)))
+for all X.(pet(X)-> dog(X) or cat(X))
 
 4. An object A is part of another object B either directly or due to the fact that A is part of anobject C, which is itself part of B.
 
 Prolog:
-partOf(A, B) :- partOf(A, C), partOf(C, B).
+isPartOf(A, B) :- PartOf(A, B).
+isPartOf(A, B) :- PartOf(A, C), isPartOf(C, B).
 
 FOL:
-for all A, B.(partOf(A, B)->(exists C.(partof(A, C) and partOf(C, B)) or partOf(A, B)))
+for all A, B.(partOf(A, B)->(exists C.(partOf(A, C) and partOf(C, B)) or partOf(A, B)))
 
 5. Hate is always mutual
 
 Prolog:
-mutual(X) :- hate(X).
+hate(X, Y) :- hate(Y, X).
 
 FOL:
-for all X.(hate(X)->mutual(X)).
+for all X, all Y.(hate(X, Y) -> hate(Y, X)).
 
 6. For every action, there is an equal and opposite reaction
 
 Prolog:
-reaction(X, Y) :- action(X), equal(X, Y), opposite(X, Y).
+We cannot write this in prolog because we cannot present existence relation (exists Y) in prolog.
 
 FOL:
 for all X.(action(X)->exists Y.(reaction(X, Y) and equal(X, Y) and opposite(X, Y)))
@@ -51,19 +55,20 @@ for all X.(action(X)->exists Y.(reaction(X, Y) and equal(X, Y) and opposite(X, Y
 
 Prolog:
 sith(master).
-sith(apprentic).
+sith(apprentice).
 
 FOL:
-exists X, Y.(sith(X) and master(X) and sith(Y) and master(Y) and not exists Z.(sith(Z)))
+for all X. (sith(X) -> X = master or X = apprentice) % domain closure
+exists X, Y.(sith(X) and X = master and sith(Y) and Y = apprentice)
 
 8. Everybody was Kung Fu fighting, those cats were fast as lightning
 
 Prolog:
-kungfuFighting(_).
+kungfuFighting(X) :- everybody(X).
 fastAsLightning(X) :- cats(X).
 
 FOL:
-for all X.(kungfuFighting(X)) and for all Y.(cats(Y)->fastAsLightning(Y))
+for all X.((everybody(X) -> kungfuFighting(X)) and for all Y.(cats(Y)->fastAsLightning(Y)))
 
 9. Nobody expects the Spanish Inquisition
 
@@ -77,7 +82,7 @@ not exists X.(expectsSpanishInquisition(X))
 10. It is a truth universally acknowledged, that a single man in possession of a good fortune, mustbe in want of a wife.
 
 Prolog:
-inWantOfWife(X) :- single(X), goodFortune(X).
+inWantOfWife(X) :- singleMan(X), goodFortune(X).
 
 FOL:
-for all X.(single(X) and goodFortune(X) -> inWantOfWife(X))
+for all X.(singleMan(X) and goodFortune(X) -> inWantOfWife(X))

@@ -21,7 +21,8 @@ crops3(Fields) :-
     label(Fields).
 
 crops4(Fields) :-
-    Fields = [_A, _B, _C, _D, _E, _F],
+    Fields = [A, B, C, D, _E, _F],
     crops_eqs(Fields),
+    A #< B, B #< C, C #< D,
     Fields ins 0..3,
     label(Fields).

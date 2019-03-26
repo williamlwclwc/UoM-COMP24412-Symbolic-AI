@@ -118,3 +118,12 @@ defRankHigher(cavaliers, pelicans).
 ![X]:(east(X) & conferenceWinner(X) => eastChampion(X)).
 
 ![X]:(finalWinner(X) => nbaChampion(X)).
+
+% query not easily asked in prolog
+![X]:(team(X) => east(X)).
+![X]:(nbaChampion(X) <=> finalWinner(X)).
+![X]:(east(X) => team(X)).
+![X]:(finalWinner(X) => semiWinner(X)).
+?[X]:(finalWinner(X) & ~firstRoundWinner(X)).
+![X]:(semiWinner(X) => conferenceWinner(X)).
+?[X]:(semiWinner(X) => conferenceWinner(X)).

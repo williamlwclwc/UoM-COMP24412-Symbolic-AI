@@ -3,5 +3,8 @@ In sql, we often use "select" statement to query some data from tables according
 If we assume tables to be facts, and constraints to be the rules we defined, and "select" procedure to be 
 ":-" implication, then the procedure in prolog will be similar to sql.
 
-Sometimes we define our rules using other rules, this could be similar to sql query that using nesting 
-"select" statements.
+Sometimes we define our rules using other rules, this could be similar to sql query that using nested 
+"select" statements.(including where, multiple select, join, etc.)
+
+However, sql not allowed recursive relation because we cannot generate new things from exist tables, but in 
+prolog we can induce something new.
