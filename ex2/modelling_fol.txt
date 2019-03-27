@@ -99,25 +99,25 @@ defRankHigher(cavaliers, pelicans).
 ![X, Y]:((defRankHigher(X, Y) | ?[Z]:(defRankHigher(Z, Y) & defBetter(X, Z))) => defBetter(X, Y)). 
 
 % intensional relations(rules)
-![X]:(?[Y]:(team(X) & team(Y) & defeat(X, Y)) => firstRoundWinner(X)).
+![X]:(?[Y]:(team(X) & team(Y) & defeat(X, Y)) <=> firstRoundWinner(X)).
 
-![X]:(?[Y]:(firstRoundWinner(X) & firstRoundWinner(Y) & defeat(X, Y)) => semiWinner(X)).
+![X]:(?[Y]:(firstRoundWinner(X) & firstRoundWinner(Y) & defeat(X, Y)) <=> semiWinner(X)).
 
-![X]:(?[Y]:(semiWinner(X) & semiWinner(Y) & defeat(X, Y)) => conferenceWinner(X)).
+![X]:(?[Y]:(semiWinner(X) & semiWinner(Y) & defeat(X, Y)) <=> conferenceWinner(X)).
 
-![X]:(?[Y]:(conferenceWinner(X) & conferenceWinner(Y) & defeat(X, Y)) => finalWinner(X)).
+![X]:(?[Y]:(conferenceWinner(X) & conferenceWinner(Y) & defeat(X, Y)) <=> finalWinner(X)).
 
-![X, Y]:(posHigher(X, Y) => homeAdvantage(X, Y)).
+![X, Y]:(posHigher(X, Y) <=> homeAdvantage(X, Y)).
 
-![X, Y]:(((east(X) & east(Y)) | (west(X) & west(Y))) & X!=Y & semiWinner(X) & semiWinner (Y) => conferenceFinal(X, Y)).
+![X, Y]:(((east(X) & east(Y)) | (west(X) & west(Y))) & X!=Y & semiWinner(X) & semiWinner (Y) <=> conferenceFinal(X, Y)).
 
-![X, Y]:(X!=Y & conferenceWinner(X) & conferenceWinner(Y) => nbaFinal(X, Y)).
+![X, Y]:(X!=Y & conferenceWinner(X) & conferenceWinner(Y) <=> nbaFinal(X, Y)).
 
-![X]:(west(X) & conferenceWinner(X) => westChampion(X)).
+![X]:(west(X) & conferenceWinner(X) <=> westChampion(X)).
 
-![X]:(east(X) & conferenceWinner(X) => eastChampion(X)).
+![X]:(east(X) & conferenceWinner(X) <=> eastChampion(X)).
 
-![X]:(finalWinner(X) => nbaChampion(X)).
+![X]:(finalWinner(X) <=> nbaChampion(X)).
 
 % query not easily asked in prolog
 ![X]:(team(X) => east(X)).

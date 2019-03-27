@@ -98,13 +98,14 @@ cnf(u12,axiom,
 % ------------------------------
 
 Explanation: There are more clauses generated if we use "--selection 0", because 
-if we use unordered resolution, we will do resolution on a literal completely, e.g. 
+if we use unordered resolution, we will do resolution on a literal completely, 
+e.g. we do resolution on 12 serveral times before moving on: 
 [SA] new: 18. ~happy(X0) | happy(X0) (1:4) [resolution 12,13]
 [SA] new: 19. loves(giles,sK0(giles)) (1:4) [resolution 12,15]
 [SA] new: 20. loves(X0,sK0(X0)) | ~rich(X0) (2:6) [resolution 12,17]
 [SA] new: 21. loves(X1,sK0(X1)) | ~loves(X1,X2) (1:7) [resolution 12,13]
 however, if we use default options, we will do resolution on a literal just once 
-and then active the new generated clause adn do resolution on other active ones, e.g.
+and then active the new generated clause and do resolution on others, e.g.
 [SA] new: 17. loves(giles,sK0(giles)) (1:4) [resolution 12,15]
 [SA] active: 17. loves(giles,sK0(giles)) (1:4:1) [resolution 12,15]
 [SA] new: 18. happy(giles) (2:2) [resolution 17,13]

@@ -82,7 +82,9 @@ not exists X.(expectsSpanishInquisition(X))
 10. It is a truth universally acknowledged, that a single man in possession of a good fortune, mustbe in want of a wife.
 
 Prolog:
-inWantOfWife(X) :- singleMan(X), goodFortune(X).
+Cannot describe "It is a truth universally acknowledged..." in prolog, 
+for it is a property of a rule, i.e. second order logic.
 
 FOL:
-for all X.(singleMan(X) and goodFortune(X) -> inWantOfWife(X))
+Need second order logic to describe "It is a truth universally acknowledged...",
+it will need to quantify a function.
