@@ -1,0 +1,395 @@
+% LaTeX Template: Project Titlepage Modified (v 0.1) by rcx
+%
+% Original Source: http://www.howtotex.com
+% Date: February 2014
+% 
+% This is a title page template which be used for articles & reports.
+% 
+% This is the modified version of the original Latex template from
+% aforementioned website.
+
+\documentclass[12pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[myheadings]{fullpage}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage[T1]{fontenc}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{fourier}
+\usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage[english]{babel}
+\usepackage{sectsty}
+\usepackage{url, lipsum}
+\usepackage{tgbonum}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\onehalfspacing
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+
+
+%-------------------------------------------------------------------------------
+% HEADER & FOOTER
+%-------------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\setlength\headheight{15pt}
+\fancyhead[L]{Student ID: 10406141}
+\fancyhead[R]{University of Manchester}
+\fancyfoot[R]{Page \thepage\ of \pageref{LastPage}}
+%-------------------------------------------------------------------------------
+% TITLE PAGE
+%-------------------------------------------------------------------------------
+
+\begin{document}
+{\fontfamily{cmr}\selectfont
+\title{ \normalsize \textsc{}
+		\\ [2.0cm]
+		\HRule{0.5pt} \\
+		\LARGE \textbf{\uppercase{Lab3 Report}
+		\HRule{2pt} \\ [0.5cm]
+		\normalsize \today \vspace*{5\baselineskip}}
+		}
+
+\date{}
+
+\author{
+		Wenchang Liu \\ 
+		ID: 10406141 \\
+		School of Computer Science }
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+%-------------------------------------------------------------------------------
+% Section title formatting
+\sectionfont{\scshape}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% BODY
+%-------------------------------------------------------------------------------
+
+\section{Ex1 Lexical Analysis}
+\label{sec: ex1}
+\begin{enumerate}[1.]
+	\item POS tag the sentence
+
+	Sentence: Steel is an alloy of iron and carbon, and sometimes other elements. 
+	Because of its high tensile strength and low cost, it is a major component used in buildings, 
+	infrastructure, tools, ships, automobiles, machines, appliances, and weapons.
+
+	Steel(NNP) is(VBZ) an(DT) alloy(NN) of(IN) iron(NN) and(CC) carbon(NN) ,(,) and(CC) sometimes(RB) 
+	other(JJ) elements(NNS) .(.) Because(IN) of(IN) its(PRP\$) high(JJ) tensile(NN) strength(NN) and(CC) 
+	low(JJ) cost(NN) ,(,) it(PRP) is(VBZ) a(DT) major(JJ) component(NN) used(VBN) in(IN) buildings(NNS) ,(,) 
+	infrastructure(NN) ,(,) tools(NNS) ,(,) ships(NNS) ,(,) automobiles(NNS) ,(,) machines(NNS) ,(,) 
+	appliances(NNS) ,(,) and(CC) weapons(NNS) .(.)
+
+	\item Identify the pronominal co-references
+
+	Co-references are "its" and "it".
+
+\end{enumerate}
+
+\newpage
+\section{Ex2 C-Structures}
+\label{sec: ex2}
+\begin{enumerate}[1.]
+	\item Plot the constituency (phrase) structure: 
+		Sentence: ‘Steel is an alloy of iron and carbon, and sometimes other elements’.
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[scale=0.3]{figs/constituency_parse.png}
+			\caption{Constituency Parse Plot}
+			\label{fig:label}
+		\end{figure}
+	\item List the nominal phrasal nodes (NPs) correspond to ‘molecules of meaning’ for that sentence
+
+		NP: Steel, an alloy, iron, carbon, iron and carbon, an alloy of iron and carbon, sometimes other elements.
+	\item List the coordinations within that sentence.
+
+		CC: and(iron and carbon), and(and sometimes other elements)
+\end{enumerate}
+
+\newpage
+\section{Ex3 Dependencies - Exploring new territories}
+\label{sec: ex3}
+\begin{enumerate}[1.]
+	\item What is the difference between dependency and constituency? 
+	
+	Dependency parsing: A dependency parse connects words according to their relationships. 
+	Each vertex in the tree represents a word, child nodes are words that are dependent on the parent, 
+	and edges are labeled by the relationship.
+	
+	Constituency parsing: A constituency parse tree breaks a text into sub-phrases. 
+	Non-terminals in the tree are types of phrases, the terminals are the words in the sentence, 
+	and the edges are unlabeled.
+	\item What is emphasised by each representation?
+	
+	Dependency parsing: Emphasising the dependency relationships between words.
+
+	Constituency parsing: Emphasising sub-phrases within the sentence.
+	\item Draw the dependency structure of the following sentence: ‘Steel is analloy of iron and carbon’.
+	
+	nsubj: nominal subject
+
+	cop: copula
+
+	det: determiner
+
+	nmod: nominal modifier
+
+	case: prepositions, postpositions and other case markers
+
+	cc: coordinating conjunction
+
+	conj: conjunct
+
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[scale=0.2]{figs/dependency_parse.jpg}
+		\caption{Dependency Parse Structure}
+		\label{fig:label1}
+	\end{figure}
+
+\end{enumerate}
+
+\newpage
+\section{Ex4 OpenIE - Semantics}
+\label{sec: ex4}
+\begin{enumerate}[1.]
+	\item Use openIE to extract the predicate-argument structure of:
+	\begin{enumerate}[(1)]
+		\item "Steel is an alloy":
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[scale=0.45]{figs/Openie1.png}
+			\caption{OpenIE result for 'Steel is an alloy'}
+			\label{fig:label2}
+		\end{figure}
+		\item "Steel contains carbon":
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[scale=0.45]{figs/Openie2.png}
+			\caption{OpenIE result for 'Steel contains carbon'}
+			\label{fig:label3}
+		\end{figure}
+		\item "Steel contains iron":
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[scale=0.45]{figs/Openie3.png}
+			\caption{OpenIE result for 'Steel contains iron'}
+			\label{fig:label4}
+		\end{figure}
+	\end{enumerate}
+	\item Represent the triples above using Prolog:
+	\begin{lstlisting}
+		alloy(X) :- steel(X).
+		containsCarbon(X) :- steel(X).
+		containsIron(X) :- steel(X).
+	\end{lstlisting}
+	\item Represent the triples above using RDF:
+	\begin{lstlisting}
+		<Steel> <is an> <alloy>.
+		<Steel> <contains> <carbon>.
+		<Steel> <contains> <iron>.
+	\end{lstlisting}
+	\item Formalise the axioms using Description Logics:
+	\begin{center}
+	$Steel \sqsubseteq Alloy$
+
+	$Steel \rightarrow \exists Contain.Carbon$
+
+	$Steel \rightarrow \exists Contain.Iron$
+	\end{center}
+	\item Analyse what happens when getting "Steel is an alloy of iron and carbon.":
+	
+	There are two relations in terms of "Steel"(subject), one is relation "is" (i.e. Steel is an alloy), 
+	the other is relation "an alloy of" (i.e. Steel 'is an alloy of' iron), and the objects are "alloy" 
+	and "iron" respectively.
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[scale=0.45]{figs/Openie4.png}
+		\caption{OpenIE result for 'Steel is an alloy of iron and carbon'}
+		\label{fig:label5}
+	\end{figure}
+\end{enumerate}
+
+\newpage
+\section{Ex5 Complex OpenIE, Rhetorical Structures}
+\label{sec: ex5}
+
+Sentence: 'As the carbon percentage content rises, steel has the ability to become harder 
+and stronger through heat treating; however, it becomes less ductile.'
+\begin{enumerate}[1.]
+	\item Identify the nucleus and the satellites
+	
+	nucleus: "however, it becomes less ductile."
+
+	satellites: "As the carbon percentage content rises, steel has the ability to become harder 
+	and stronger through heat treating;"
+	\item Draw the diagram with the rhetorical relations
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[scale=0.15]{figs/rhetorical_structure.jpg}
+		\caption{rhetorical relation diagram}
+		\label{fig:label6}
+	\end{figure}
+	\item Which relations are hypotactic or paratactic?
+	
+	The "concession" and "cause" are both hypotactic.
+	\item Write the output for that sentence using the RDF-NL notation of Graphene
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[scale=0.3]{figs/Graphene_output.png}
+		\caption{output from Graphene}
+		\label{fig:label6}
+	\end{figure}
+	
+\end{enumerate}
+
+\newpage
+\section{Ex6 Taxonomies, Thesauri}
+\label{sec: ex6}
+\begin{enumerate}[1.]
+	\item List the WordNet glosses for 'martensite' and 'austenite'
+	
+	martensite: a solid solution of carbon in alpha-iron that is formed when steel is cooled so rapidly that 
+	the change from austenite to pearlite is suppressed; responsible for the hardness of quenched steel.
+
+	austenite: a solid solution of ferric carbide or carbon in iron; cools to form pearlite or martensite.
+	\item List the Taxonomic/Hypernym chain up to the top for these two terms
+	
+	martensite/austenite -> solid solution, primary solid solution -> solution -> mixture -> substance ->
+
+	(1) matter -> physical entity -> entity
+
+	(2) part, portion, component part, component, constituent -> relation -> abstraction, abstract entity -> entity
+
+	\item List their sibling terms: 
+	ferrite, double salt
+	\item For the word 'temper': 
+	\begin{enumerate}[(1)]
+		\item how many synsets do we have? 9 synsets. 
+		\item Which senses are related to steel? 
+			\begin{enumerate}[*]
+				\item the elasticity and hardness of a metal object; 
+				its ability to absorb considerable energy before cracking
+				\item bring to a desired consistency, texture, or hardness by a process of gradually heating and cooling
+				\item harden by reheating and cooling in oil
+			\end{enumerate}
+		\item What are its synonyms? (n)toughness; (v)anneal, normalize; (v)harden
+		\item Would you consider these perfect or near-synonyms? 
+		
+		For anneal and normalize, I think they are perfect, but for toughness and harden, they are near-synonyms. 
+		Because for anneal and normalize, they are very specific and mean exactly the same thing, but for toughness, 
+		I think it is more a similar meaning not exactly the same.
+	\end{enumerate}
+\end{enumerate}
+\section{Ex7 Frame Semantics - Exploring Further}
+\label{sec: ex7}
+
+\section{Ex8 Ontologies - Description Logics}
+\label{sec: ex8}
+
+\section{Ex9 Inductive \& Deductive Reasoning}
+\label{sec: ex9}
+
+%-------------------------------------------------------------------------------
+% REFERENCES
+%-------------------------------------------------------------------------------
+% \newpage
+% \section*{References}
+
+%[2]John W. Eaton, David Bateman, Sren Hauberg, Rik Wehbring (2015). GNU
+%Octave version 4.0.0 manual: a high-level interactive language for numer-
+%ical computations. Available: http://www.gnu.org/software/octave/doc/
+%interpreter/. 
+}
+\end{document}
+
+%-------------------------------------------------------------------------------
+% SNIPPETS
+%-------------------------------------------------------------------------------
+
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=0.8\textwidth]{file_name}
+%	\caption{}
+%	\centering
+%	\label{label:file_name}
+%\end{figure}
+
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=0.8\textwidth]{graph}
+%	\caption{Blood pressure ranges and associated level of hypertension (American Heart Association, 2013).}
+%	\centering
+%	\label{label:graph}
+%\end{figure}
+
+%\begin{wrapfigure}{r}{0.30\textwidth}
+%	\vspace{-40pt}
+%	\begin{center}
+%		\includegraphics[width=0.29\textwidth]{file_name}
+%	\end{center}
+%	\vspace{-20pt}
+%	\caption{}
+%	\label{label:file_name}
+%\end{wrapfigure}
+
+%\begin{wrapfigure}{r}{0.45\textwidth}
+%	\begin{center}
+%		\includegraphics[width=0.29\textwidth]{manometer}
+%	\end{center}
+%	\caption{Aneroid sphygmomanometer with stethoscope (Medicalexpo, 2012).}
+%	\label{label:manometer}
+%\end{wrapfigure}
+
+%\begin{table}[!ht]\footnotesize
+%	\centering
+%	\begin{tabular}{cccccc}
+%	\toprule
+%	\multicolumn{2}{c} {Pearson's correlation test} & \multicolumn{4}{c} {Independent t-test} \\
+%	\midrule	
+%	\multicolumn{2}{c} {Gender} & \multicolumn{2}{c} {Activity level} & \multicolumn{2}{c} {Gender} \\
+%	\midrule
+%	Males & Females & 1st level & 6th level & Males & Females \\
+%	\midrule
+%	\multicolumn{2}{c} {BMI vs. SP} & \multicolumn{2}{c} {Systolic pressure} & \multicolumn{2}{c} {Systolic Pressure} \\
+%	\multicolumn{2}{c} {BMI vs. DP} & \multicolumn{2}{c} {Diastolic pressure} & \multicolumn{2}{c} {Diastolic pressure} \\
+%	\multicolumn{2}{c} {BMI vs. MAP} & \multicolumn{2}{c} {MAP} & \multicolumn{2}{c} {MAP} \\
+%	\multicolumn{2}{c} {W:H ratio vs. SP} & \multicolumn{2}{c} {BMI} & \multicolumn{2}{c} {BMI} \\
+%	\multicolumn{2}{c} {W:H ratio vs. DP} & \multicolumn{2}{c} {W:H ratio} & \multicolumn{2}{c} {W:H ratio} \\
+%	\multicolumn{2}{c} {W:H ratio vs. MAP} & \multicolumn{2}{c} {\% Body fat} & \multicolumn{2}{c} {\% Body fat} \\
+%	\multicolumn{2}{c} {} & \multicolumn{2}{c} {Height} & \multicolumn{2}{c} {Height} \\
+%	\multicolumn{2}{c} {} & \multicolumn{2}{c} {Weight} & \multicolumn{2}{c} {Weight} \\
+%	\multicolumn{2}{c} {} & \multicolumn{2}{c} {Heart rate} & \multicolumn{2}{c} {Heart rate} \\
+%	\bottomrule
+%	\end{tabular}
+%	\caption{Parameters that were analysed and related statistical test performed for current study. BMI - body mass index; SP - systolic pressure; DP - diastolic pressure; MAP - mean arterial pressure; W:H ratio - waist to hip ratio.}
+%	\label{label:tests}
+%\end{table}%\documentclass{article}
+%\usepackage[utf8]{inputenc}
+
+%\title{Weekly Report template}
+%\author{gandhalijuvekar }
+%\date{January 2019}
+
+%\begin{document}
+
+%\maketitle
+
+%\section{Introduction}
+
+%\end{document}

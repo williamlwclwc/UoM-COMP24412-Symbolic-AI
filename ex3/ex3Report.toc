@@ -1,0 +1,10 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Ex1 Lexical Analysis}{3}{section.1}
+\contentsline {section}{\numberline {2}Ex2 C-Structures}{4}{section.2}
+\contentsline {section}{\numberline {3}Ex3 Dependencies - Exploring new territories}{5}{section.3}
+\contentsline {section}{\numberline {4}Ex4 OpenIE - Semantics}{6}{section.4}
+\contentsline {section}{\numberline {5}Ex5 Complex OpenIE, Rhetorical Structures}{8}{section.5}
+\contentsline {section}{\numberline {6}Ex6 Taxonomies, Thesauri}{9}{section.6}
+\contentsline {section}{\numberline {7}Ex7 Frame Semantics - Exploring Further}{10}{section.7}
+\contentsline {section}{\numberline {8}Ex8 Ontologies - Description Logics}{10}{section.8}
+\contentsline {section}{\numberline {9}Ex9 Inductive \& Deductive Reasoning}{10}{section.9}
