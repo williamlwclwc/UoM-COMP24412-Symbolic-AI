@@ -1,0 +1,18 @@
+% queries ex9-2
+ferrite(X, Y), liquid(X).
+ferrite(X, Y), solid(X).
+pearlite(X, Y), liquid(X).
+pearlite(X, Y), solid(X).
+austenite(X, Y), liquid(X).
+austenite(X, Y), solid(X).
+cementite(X, Y), liquid(X).
+cementite(X, Y), solid(X).
+
+% queries ex9-3
+ferrite(X, Y), highHardness(Y).
+ferrite(X, Y), highDuctility(Y).
+cementite(X, Y), highDuctility(Y).
+ferrite(X, Y), lowTensileStrength(Y).
+pearlite(X, Y), lowTensileStrength(Y).
+austenite(X, Y), lowTensileStrength(Y).
+cementite(X, Y), lowTensileStrength(Y).

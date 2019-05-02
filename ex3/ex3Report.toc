@@ -6,5 +6,7 @@
 \contentsline {section}{\numberline {5}Ex5 Complex OpenIE, Rhetorical Structures}{8}{section.5}
 \contentsline {section}{\numberline {6}Ex6 Taxonomies, Thesauri}{9}{section.6}
 \contentsline {section}{\numberline {7}Ex7 Frame Semantics - Exploring Further}{10}{section.7}
-\contentsline {section}{\numberline {8}Ex8 Ontologies - Description Logics}{10}{section.8}
-\contentsline {section}{\numberline {9}Ex9 Inductive \& Deductive Reasoning}{10}{section.9}
+\contentsline {section}{\numberline {8}Ex8 Ontologies - Description Logics}{11}{section.8}
+\contentsline {section}{\numberline {9}Ex9 Inductive \& Deductive Reasoning}{11}{section.9}
+\contentsline {section}{\numberline {10}Appendix A: Ontology XML}{14}{section.10}
+\contentsline {section}{\numberline {11}Appendix B: Prolog knowledge base}{23}{section.11}
