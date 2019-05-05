@@ -1,0 +1,12 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Ex1 Building a CFG}{3}{section.1}
+\contentsline {section}{\numberline {2}Ex2 Building a CFG in Prolog}{4}{section.2}
+\contentsline {section}{\numberline {3}Ex3 DCGs}{5}{section.3}
+\contentsline {section}{\numberline {4}Ex4 CCGs}{5}{section.4}
+\contentsline {section}{\numberline {5}Ex5 CCG Syntactic Parser}{7}{section.5}
+\contentsline {section}{\numberline {6}Ex6 CCG Semantic Parser}{8}{section.6}
+\contentsline {section}{\numberline {7}Ex7 Question Answering}{9}{section.7}
+\contentsline {section}{\numberline {8}Appendix A: Prolog file in ex2}{11}{section.8}
+\contentsline {section}{\numberline {9}Appendix B: Prolog file in ex3}{11}{section.9}
+\contentsline {section}{\numberline {10}Appendix C: Python file in ex5}{11}{section.10}
+\contentsline {section}{\numberline {11}Appendix D: Python file in ex6}{13}{section.11}
