@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.28)  5 MAY 2019 16:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.28)  6 MAY 2019 02:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/william/william/COMP24412/ex3b/ex4Report.tex
-(/home/william/william/COMP24412/ex3b/ex4Report.tex
+**/home/william/Desktop/william/COMP24412/ex3/KR_and_ILP_Lab.tex
+(/home/william/Desktop/william/COMP24412/ex3/KR_and_ILP_Lab.tex
 LaTeX2e <2018-04-01> patch level 5
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -601,8 +601,8 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 LaTeX Font Info:    Try loading font information for T1+qbk on input line 33.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/tex-gyre/t1qbk.fd
 File: t1qbk.fd 2009/09/25 v1.2 font definition file for T1/qbk
-) (/home/william/william/COMP24412/ex3b/ex4Report.aux)
-\openout1 = `ex4Report.aux'.
+) (/home/william/Desktop/william/COMP24412/ex3/KR_and_ILP_Lab.aux)
+\openout1 = `KR_and_ILP_Lab.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
 LaTeX Font Info:    ... okay on input line 52.
@@ -736,9 +736,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 52.
 LaTeX Info: Redefining \pageref on input line 52.
 LaTeX Info: Redefining \nameref on input line 52.
- (/home/william/william/COMP24412/ex3b/ex4Report.out) (/home/william/william/COMP24412/ex3b/ex4Report.out)
+ (/home/william/Desktop/william/COMP24412/ex3/KR_and_ILP_Lab.out) (/home/william/Desktop/william/COMP24412/ex3/KR_and_ILP_Lab.out)
 \@outlinefile=\write3
-\openout3 = `ex4Report.out'.
+\openout3 = `KR_and_ILP_Lab.out'.
 
 \c@lstlisting=\count132
  (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg
@@ -770,93 +770,175 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 7.35999pt on input line 70.
  [1
 
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (/home/william/william/COMP24412/ex3b/ex4Report.toc)
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (/home/william/Desktop/william/COMP24412/ex3/KR_and_ILP_Lab.toc)
 \tf@toc=\write4
-\openout4 = `ex4Report.toc'.
+\openout4 = `KR_and_ILP_Lab.toc'.
 
  [2]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/qbk/b/sc/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
  [3]
+<figs/constituency_parse.png, id=85, 933.4875pt x 873.2625pt>
+File: figs/constituency_parse.png Graphic file (type png)
+<use figs/constituency_parse.png>
+Package pdftex.def Info: figs/constituency_parse.png  used on input line 112.
+(pdftex.def)             Requested size: 280.04842pt x 261.98076pt.
+ [4 </home/william/Desktop/william/COMP24412/ex3/figs/constituency_parse.png>]
+<figs/dependency_parse.jpg, id=97, 1798.72pt x 741.77126pt>
+File: figs/dependency_parse.jpg Graphic file (type jpg)
+<use figs/dependency_parse.jpg>
+Package pdftex.def Info: figs/dependency_parse.jpg  used on input line 160.
+(pdftex.def)             Requested size: 359.73763pt x 148.35162pt.
+ [5 </home/william/Desktop/william/COMP24412/ex3/figs/dependency_parse.jpg>]
+<figs/Openie1.png, id=107, 306.14375pt x 72.27pt>
+File: figs/Openie1.png Graphic file (type png)
+<use figs/Openie1.png>
+Package pdftex.def Info: figs/Openie1.png  used on input line 176.
+(pdftex.def)             Requested size: 137.7634pt x 32.52118pt.
+<figs/Openie2.png, id=108, 287.0725pt x 72.27pt>
+File: figs/Openie2.png Graphic file (type png)
+<use figs/Openie2.png>
+Package pdftex.def Info: figs/Openie2.png  used on input line 183.
+(pdftex.def)             Requested size: 129.18143pt x 32.52118pt.
+<figs/Openie3.png, id=109, 285.065pt x 75.28125pt>
+File: figs/Openie3.png Graphic file (type png)
+<use figs/Openie3.png>
+Package pdftex.def Info: figs/Openie3.png  used on input line 190.
+(pdftex.def)             Requested size: 128.27806pt x 33.87624pt.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 144.
+(Font)              scaled to size 11.03998pt on input line 197.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 144.
+(Font)              scaled to size 8.27998pt on input line 197.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 144.
+(Font)              scaled to size 6.43999pt on input line 197.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 144.
+(Font)              scaled to size 11.03998pt on input line 197.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 144.
+(Font)              scaled to size 8.27998pt on input line 197.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 144.
- [4] [5]
-<figs/derTree1.jpg, id=104, 1331.97626pt x 843.15pt>
-File: figs/derTree1.jpg Graphic file (type jpg)
-<use figs/derTree1.jpg>
-Package pdftex.def Info: figs/derTree1.jpg  used on input line 279.
-(pdftex.def)             Requested size: 266.39053pt x 168.627pt.
-<figs/derTree2.jpg, id=105, 1884.03876pt x 973.6375pt>
-File: figs/derTree2.jpg Graphic file (type jpg)
-<use figs/derTree2.jpg>
-Package pdftex.def Info: figs/derTree2.jpg  used on input line 285.
-(pdftex.def)             Requested size: 376.80107pt x 194.72404pt.
- [6 </home/william/william/COMP24412/ex3b/figs/derTree1.jpg>]
-<figs/syntax-parse1.png, id=113, 394.47375pt x 461.725pt>
-File: figs/syntax-parse1.png Graphic file (type png)
-<use figs/syntax-parse1.png>
-Package pdftex.def Info: figs/syntax-parse1.png  used on input line 300.
-(pdftex.def)             Requested size: 138.06787pt x 161.60617pt.
-<figs/syntax-parse2.png, id=115, 846.16125pt x 795.97375pt>
-File: figs/syntax-parse2.png Graphic file (type png)
-<use figs/syntax-parse2.png>
-Package pdftex.def Info: figs/syntax-parse2.png  used on input line 306.
-(pdftex.def)             Requested size: 270.77713pt x 254.7168pt.
- [7 </home/william/william/COMP24412/ex3b/figs/derTree2.jpg> </home/william/william/COMP24412/ex3b/figs/syntax-parse1.png>]
-<figs/semantics-parse1.png, id=127, 791.95876pt x 462.72874pt>
-File: figs/semantics-parse1.png Graphic file (type png)
-<use figs/semantics-parse1.png>
-Package pdftex.def Info: figs/semantics-parse1.png  used on input line 322.
-(pdftex.def)             Requested size: 277.18971pt x 161.95749pt.
-<figs/semantics-parse2.png, id=128, 1853.92625pt x 795.97375pt>
-File: figs/semantics-parse2.png Graphic file (type png)
-<use figs/semantics-parse2.png>
-Package pdftex.def Info: figs/semantics-parse2.png  used on input line 328.
-(pdftex.def)             Requested size: 444.9514pt x 191.0376pt.
- [8 </home/william/william/COMP24412/ex3b/figs/syntax-parse2.png> </home/william/william/COMP24412/ex3b/figs/semantics-parse1.png>] [9 </home/william/william/COMP24412/ex3b/figs/semantics-parse2.png>] [10] (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+(Font)              scaled to size 6.43999pt on input line 197.
+ [6 </home/william/Desktop/william/COMP24412/ex3/figs/Openie1.png> </home/william/Desktop/william/COMP24412/ex3/figs/Openie2.png> </home/william/Desktop/william/COMP24412/ex3/figs/Openie3.png>]
+<figs/Openie4.png, id=139, 438.63875pt x 98.3675pt>
+File: figs/Openie4.png Graphic file (type png)
+<use figs/Openie4.png>
+Package pdftex.def Info: figs/Openie4.png  used on input line 222.
+(pdftex.def)             Requested size: 197.3856pt x 44.26495pt.
+ [7 </home/william/Desktop/william/COMP24412/ex3/figs/Openie4.png>]
+<figs/rhetorical_structure.jpg, id=149, 1574.88374pt x 1005.7575pt>
+File: figs/rhetorical_structure.jpg Graphic file (type jpg)
+<use figs/rhetorical_structure.jpg>
+Package pdftex.def Info: figs/rhetorical_structure.jpg  used on input line 244.
+(pdftex.def)             Requested size: 236.22237pt x 150.85712pt.
+<figs/Graphene_output.png, id=150, 1425.325pt x 281.05pt>
+File: figs/Graphene_output.png Graphic file (type png)
+<use figs/Graphene_output.png>
+Package pdftex.def Info: figs/Graphene_output.png  used on input line 254.
+(pdftex.def)             Requested size: 427.6008pt x 84.31564pt.
+ [8 </home/william/Desktop/william/COMP24412/ex3/figs/rhetorical_structure.jpg> </home/william/Desktop/william/COMP24412/ex3/figs/Graphene_output.png>] [9]
+<figs/conceptual_graph.jpg, id=180, 1777.64125pt x 1080.035pt>
+File: figs/conceptual_graph.jpg Graphic file (type jpg)
+<use figs/conceptual_graph.jpg>
+Package pdftex.def Info: figs/conceptual_graph.jpg  used on input line 331.
+(pdftex.def)             Requested size: 319.96162pt x 194.3979pt.
+ [10 </home/william/Desktop/william/COMP24412/ex3/figs/conceptual_graph.jpg>]
+<figs/ex8-class-hierarchy.png, id=193, 346.29375pt x 656.4525pt>
+File: figs/ex8-class-hierarchy.png Graphic file (type png)
+<use figs/ex8-class-hierarchy.png>
+Package pdftex.def Info: figs/ex8-class-hierarchy.png  used on input line 345.
+(pdftex.def)             Requested size: 138.51503pt x 262.57634pt.
+<figs/ex8-object-properties.png, id=194, 442.65375pt x 155.58125pt>
+File: figs/ex8-object-properties.png Graphic file (type png)
+<use figs/ex8-object-properties.png>
+Package pdftex.def Info: figs/ex8-object-properties.png  used on input line 356.
+(pdftex.def)             Requested size: 110.66316pt x 38.8952pt.
+<figs/ex8-data-property.png, id=195, 428.60126pt x 113.42375pt>
+File: figs/ex8-data-property.png Graphic file (type png)
+<use figs/ex8-data-property.png>
+Package pdftex.def Info: figs/ex8-data-property.png  used on input line 362.
+(pdftex.def)             Requested size: 107.15004pt x 28.35587pt.
+<figs/ex8-highcarbonsteel-example.png, id=196, 923.45pt x 431.6125pt>
+File: figs/ex8-highcarbonsteel-example.png Graphic file (type png)
+<use figs/ex8-highcarbonsteel-example.png>
+Package pdftex.def Info: figs/ex8-highcarbonsteel-example.png  used on input line 368.
+(pdftex.def)             Requested size: 277.03712pt x 129.48474pt.
+ [11 </home/william/Desktop/william/COMP24412/ex3/figs/ex8-class-hierarchy.png> </home/william/Desktop/william/COMP24412/ex3/figs/ex8-object-properties.png> </home/william/Desktop/william/COMP24412/ex3/figs/ex8-data-property.png>]
+<figs/ex9-2-1.png, id=210, 320.19624pt x 313.17pt>
+File: figs/ex9-2-1.png Graphic file (type png)
+<use figs/ex9-2-1.png>
+Package pdftex.def Info: figs/ex9-2-1.png  used on input line 400.
+(pdftex.def)             Requested size: 112.07036pt x 109.61113pt.
+<figs/ex9-2-2.png, id=211, 344.28625pt x 221.82875pt>
+File: figs/ex9-2-2.png Graphic file (type png)
+<use figs/ex9-2-2.png>
+Package pdftex.def Info: figs/ex9-2-2.png  used on input line 406.
+(pdftex.def)             Requested size: 120.50198pt x 77.6412pt.
+<figs/ex9-2-3.png, id=212, 336.25626pt x 297.11pt>
+File: figs/ex9-2-3.png Graphic file (type png)
+<use figs/ex9-2-3.png>
+Package pdftex.def Info: figs/ex9-2-3.png  used on input line 412.
+(pdftex.def)             Requested size: 117.69145pt x 103.99005pt.
+<figs/ex9-2-4.png, id=213, 342.27875pt x 306.14375pt>
+File: figs/ex9-2-4.png Graphic file (type png)
+<use figs/ex9-2-4.png>
+Package pdftex.def Info: figs/ex9-2-4.png  used on input line 418.
+(pdftex.def)             Requested size: 119.79935pt x 107.1519pt.
+<figs/ex9-3-1.png, id=214, 399.4925pt x 90.3375pt>
+File: figs/ex9-3-1.png Graphic file (type png)
+<use figs/ex9-3-1.png>
+Package pdftex.def Info: figs/ex9-3-1.png  used on input line 431.
+(pdftex.def)             Requested size: 119.84866pt x 27.10144pt.
+ [12 </home/william/Desktop/william/COMP24412/ex3/figs/ex8-highcarbonsteel-example.png> </home/william/Desktop/william/COMP24412/ex3/figs/ex9-2-1.png> </home/william/Desktop/william/COMP24412/ex3/figs/ex9-2-2.png> </home/william/Desktop/william/COMP24412/ex3/figs/ex9-2-3.png> </home/william/Desktop/william/COMP24412/ex3/figs/ex9-2-4.png>]
+<figs/ex9-3-2.png, id=233, 417.56pt x 272.01625pt>
+File: figs/ex9-3-2.png Graphic file (type png)
+<use figs/ex9-3-2.png>
+Package pdftex.def Info: figs/ex9-3-2.png  used on input line 442.
+(pdftex.def)             Requested size: 125.26895pt x 81.6055pt.
+<figs/ex9-3-3.png, id=234, 480.79625pt x 486.81876pt>
+File: figs/ex9-3-3.png Graphic file (type png)
+<use figs/ex9-3-3.png>
+Package pdftex.def Info: figs/ex9-3-3.png  used on input line 453.
+(pdftex.def)             Requested size: 144.23997pt x 146.04675pt.
+ [13 </home/william/Desktop/william/COMP24412/ex3/figs/ex9-3-1.png> </home/william/Desktop/william/COMP24412/ex3/figs/ex9-3-2.png> </home/william/Desktop/william/COMP24412/ex3/figs/ex9-3-3.png>] (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2018/09/02 1.7 listings language file
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 464.
+ (/home/william/Desktop/william/COMP24412/ex3/steel-ontology.owx
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 4.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 4.
+ [14] [15] [16] [17] [18] [19] [20] [21]) [22] (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang2.sty
 File: lstlang2.sty 2018/09/02 1.7 listings language file
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 379.
- (/home/william/william/COMP24412/ex3b/cfg.pl) (/home/william/william/COMP24412/ex3b/dcg.pl) (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2018/09/02 1.7 listings language file
-) (/home/william/william/COMP24412/ex3b/ccg-syntax-parse.py [11] [12]) (/home/william/william/COMP24412/ex3b/ccg-semantics-parse.py [13]) 
+) (/home/william/Desktop/william/COMP24412/ex3/./ex9_kb.pl) 
 AED: lastpage setting LastPage
-[14]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 404.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 404.
- (/home/william/william/COMP24412/ex3b/ex4Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 404.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 404.
-Package rerunfilecheck Info: File `ex4Report.out' has not changed.
-(rerunfilecheck)             Checksum: F800C85C7F93B38603A7D9ED543004FE;640.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 404.
+[23]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 484.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 484.
+ (/home/william/Desktop/william/COMP24412/ex3/KR_and_ILP_Lab.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 484.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 484.
+Package rerunfilecheck Info: File `KR_and_ILP_Lab.out' has not changed.
+(rerunfilecheck)             Checksum: 79C4B6755ED6E2B584E159B90126C027;725.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 484.
  ) 
 Here is how much of TeX's memory you used:
- 12901 strings out of 492639
- 195036 string characters out of 6129287
- 621899 words of memory out of 5000000
- 16384 multiletter control sequences out of 15000+600000
- 73471 words of font info for 74 fonts, out of 8000000 for 9000
+ 13534 strings out of 492639
+ 206198 string characters out of 6129287
+ 656996 words of memory out of 5000000
+ 16417 multiletter control sequences out of 15000+600000
+ 90281 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,12n,43p,312b,2052s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec-sc.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/tex-gyre/qbkb.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/tex-gyre/qbkr.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrb1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrb2074.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on /home/william/william/COMP24412/ex3b/ex4Report.pdf (14 pages, 1312390 bytes).
+ 37i,12n,52p,324b,1977s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec-sc.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/tex-gyre/qbkb.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/tex-gyre/qbkr.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrb0600.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrb1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrb2074.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfti0600.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on /home/william/Desktop/william/COMP24412/ex3/KR_and_ILP_Lab.pdf (23 pages, 1783865 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 327 compressed objects within 4 object streams
- 163 named destinations out of 1000 (max. 500000)
- 12919 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 1144 PDF objects out of 1200 (max. 8388607)
+ 1058 compressed objects within 11 object streams
+ 741 named destinations out of 1000 (max. 500000)
+ 17597 words of extra memory for PDF output out of 20736 (max. 10000000)
 
