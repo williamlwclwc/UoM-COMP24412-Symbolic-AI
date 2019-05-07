@@ -250,6 +250,11 @@ INPUT /home/william/Desktop/william/COMP24412/ex3b/figs/semantics-parse1.png
 INPUT /home/william/Desktop/william/COMP24412/ex3b/figs/semantics-parse2.png
 INPUT /home/william/Desktop/william/COMP24412/ex3b/figs/semantics-parse2.png
 INPUT /home/william/Desktop/william/COMP24412/ex3b/figs/semantics-parse2.png
+INPUT /home/william/Desktop/william/COMP24412/ex3b/figs/adjusted-semantics.png
+INPUT /home/william/Desktop/william/COMP24412/ex3b/figs/adjusted-semantics.png
+INPUT /home/william/Desktop/william/COMP24412/ex3b/figs/adjusted-semantics.png
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/public/fourier/futr8t.vf
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/fourier/fourier-alt.tfm
 INPUT /home/william/Desktop/william/COMP24412/ex3b/cfg.pl
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -269,6 +274,9 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecti1200.tfm
 INPUT /home/william/Desktop/william/COMP24412/ex3b/ccg-semantics-parse.py
 INPUT /home/william/Desktop/william/COMP24412/ex3b/ccg-semantics-parse.py
 INPUT /home/william/Desktop/william/COMP24412/ex3b/ccg-semantics-parse.py
+INPUT /home/william/Desktop/william/COMP24412/ex3b/ccg-questions.py
+INPUT /home/william/Desktop/william/COMP24412/ex3b/ccg-questions.py
+INPUT /home/william/Desktop/william/COMP24412/ex3b/ccg-questions.py
 INPUT /home/william/Desktop/william/COMP24412/ex3b/Syntactic_and_Semantic_Parsing_Lab.aux
 INPUT /home/william/Desktop/william/COMP24412/ex3b/Syntactic_and_Semantic_Parsing_Lab.out
 INPUT /home/william/Desktop/william/COMP24412/ex3b/Syntactic_and_Semantic_Parsing_Lab.out

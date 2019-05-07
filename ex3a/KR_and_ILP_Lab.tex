@@ -28,6 +28,7 @@
 \usepackage{listings}
 \usepackage{lstautogobble}
 \usepackage{subfigure}
+\usepackage{float}
 
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
 \onehalfspacing
@@ -247,7 +248,7 @@ and stronger through heat treating; however, it becomes less ductile.'
 	\end{figure}
 	\item Which relations are hypotactic or paratactic?
 	
-	The "concession" and "cause" are both hypotactic.
+	The "concession" and "background" are both hypotactic.
 	\item Write the output for that sentence using the RDF-NL notation of Graphene
 	\begin{figure}[ht]
 		\centering
@@ -302,28 +303,55 @@ and stronger through heat treating; however, it becomes less ductile.'
 \label{sec: ex7}
 \begin{enumerate}[1.]
 	\item Describe the frame semantics for "melt" "oxidize" as listed by VerbNet, Prop-Bank and FrameNet
-	\begin{enumerate}[(1)]
-		\item VerbNet:
 		
-			$melt: KNEAD-26.5, OTHER\_COS-45.4-1$
+		Melt has following roles:
 
-			$oxidize: ENTITY\_SPECIFIC\_COS-45.5, OTHER\_COS-45.4$
-		\item Prop-Bank: 
+		VerbNet:
+		\begin{itemize}
+			\item \textbf{Agent[+animate | +machine]}
+			\item \textbf{Product}
+			\item \textbf{Material}
+		\end{itemize}  
 		
-			$melt: MELT.v$
-
-			$oxidize: OXIDIZE.v$
-		\item FrameNet:
+		PropBank:
+		\begin{itemize}
+			\item \textbf{Arg0-PAG:} agent (26.5-Agent, 45.4-Agent)  
+			\item \textbf{Arg1-PPT:} thing melted (26.5-Material, 45.4-Patient) 
+		\end{itemize} 
 		
-			$melt: CAUSE\_CHANGE\_OF\_PHASE, CHANGE\_OF\_PHASE$
+		FrameNet:
+		\begin{itemize}
+			\item \textbf{Agent [Agt]} The Agent causes the Patient to change phase.  
+			\item \textbf{Cause [Cause]} The Cause is the non-Agent which brings about the  change in the Patient. 
+			\item \textbf{Patient [Pat]} The Patient undergoes a change of phase brought about by the Agent.  
+		\end{itemize} 
+		
+		Oxidize has following roles:
 
-			$oxidize: CORRODING\_CAUSED$
-	\end{enumerate}
+		VerbNet:
+		\begin{itemize}
+			\item \textbf{Agent [+int\_control]}
+			\item \textbf{Patient}
+			\item \textbf{Instrument}
+			\item \textbf{Result}
+		\end{itemize} 
+		
+		PropBank:
+		\begin{itemize}
+			\item \textbf{Arg0-PAG:} Cause of oxidizing, Scientist causing conversion 
+			\item \textbf{Arg1-PPT:} Entity/element oxidizing
+			\item \textbf{Arg2-PRD:} End state, oxidized to what
+		\end{itemize}
+		
+		FrameNet:
+		\begin{itemize}
+			\item \textbf{Agent [age] } Cause of oxidizing, Scientist causing conversion 
+			\item \textbf{Patient [Pat]} Entity/element oxidizing
+		\end{itemize}
 	\item How these representations compare?
 	
-	Prop-Bank is tightly connected to VerbNet lexicon, and can increase verb coverage, it 
-	is made by generalized semantic roles, defined as prototypes and has fewer thematic roles 
-	compared to FrameNet, which define roles specific to a group of predicates.
+	VerbNet and PropBank are similar and tightly connected, they are made by generalized semantic roles, 
+	but FrameNet has more thematic roles than VerbNet and PropBank, e.g. Cause.
 	\item Using the FrameNet semantics, draw the Conceptual Graph for the following sentence:  
 	‘At 1433 degrees, the material started to progressively melt around the edges.’
 	\begin{figure}[ht]
@@ -342,7 +370,7 @@ Ex8: Convert the natural language statements into an ontology.
 Here are some screenshots of the work:
 \begin{figure}[ht]
 	\centering
-	\includegraphics[scale=0.4]{figs/ex8-class-hierarchy.png}
+	\includegraphics[scale=0.3]{figs/ex8-class-hierarchy.png}
 	\caption{Class hierarchy of the ontology}
 	\label{fig:label9}
 \end{figure}
@@ -363,7 +391,7 @@ Here are some screenshots of the work:
 	\caption{Properties}
 	\label{fig:label10}
 \end{figure}
-\begin{figure}[ht]
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.3]{figs/ex8-highcarbonsteel-example.png}
 	\caption{an example entity graph of high carbon steel}

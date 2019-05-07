@@ -354,41 +354,61 @@
     has(Cementite, high(hardness))
     \item For the two questions, adapt the semantic features of your previous grammar to match the predicate form in the KB.
     
+    I slightly adjust the semantics of the previous exercise so I can do the matchings:
+
     Match Ferrite(x) to Ferrite(Ferrite)
 
-    Match have(x, high(hardness)) to has(Ferrite, low(hardness))
+    Match has(x, high(hardness)) to has(Cementite, high(hardness))
     
-    Match the(argmin(tensile, strength)) to 0.1(tensile, strength)
+    Match argmin(tensile, strength)) to 0.1(tensile, strength)
     
-    Match has(x, the(argmin(tensile, strength))) to has(Ferrite, 0.1(tensile, strength))
+    Match has(x, argmin(tensile, strength)) to has(Ferrite, 0.1(tensile, strength))
     \item Run the parser and print the parse trees for the two questions.
     
-    See figure CCG semantics parse for questions in the previous exercise.
+    Parser output:
+
+    $S \{\backslash x.(Ferrite(x) \& has(x,high(hardness)))\}$
+
+    $S \{\backslash x.(material(x) \& has(x,argmin(tensile,strength)))\}$
+
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[scale=0.25]{figs/adjusted-semantics.png}
+        \caption{Adjusted CCG semantics parse for questions}
+        \label{label:adjusted parser}
+    \end{figure}
     \item How would you use the parser output to compute an answer for the query over the KB?
     
-    For the first question, in output Ferrite has high hardness, but in knowledge base, Ferrite has low hardness,
-    so the answer is no.
+    For the first question, in parser output x has high hardness, and in knowledge base, 
+    only Cementite has high hardness, so we match x as Cementite, which is not agree with 
+    Ferrite(x), so the answer is no.
 
-    For the second question, we matched Ferrite into the output's x, so the answer will be Ferrite.
+    For the second question, we firstly search for argmin in the knowledge base, which is 0.1 among 
+    0.1, 0.3, 0.4 and 0.7, and then we can match the "has" predicate, and here x is Ferrite, also, 
+    Ferrite is a kind of material, so material(Ferrite) is true, so the answer of the query is Ferrite.
 \end{enumerate}
 
 \newpage
-\section{Appendix A: Prolog file in ex2}
+\section{Appendix A: Prolog file for ex2}
 \label{sec: AppendixA}
 %\lstset{basicstyle=\normalsize}
 \lstinputlisting[language=prolog]{cfg.pl}
 
-\section{Appendix B: Prolog file in ex3}
+\section{Appendix B: Prolog file for ex3}
 \label{sec: AppendixB}
 \lstinputlisting[language=prolog]{dcg.pl}
 
-\section{Appendix C: Python file in ex5}
+\section{Appendix C: Python file for ex5}
 \label{sec: AppendixC}
 \lstinputlisting[language=python]{ccg-syntax-parse.py}
 
-\section{Appendix D: Python file in ex6}
+\section{Appendix D: Python file for ex6}
 \label{sec: AppendixD}
 \lstinputlisting[language=python]{ccg-semantics-parse.py}
+
+\section{Appendix E: Python file for ex7}
+\label{sec: AppendixD}
+\lstinputlisting[language=python]{ccg-questions.py}
 
 %-------------------------------------------------------------------------------
 % REFERENCES
